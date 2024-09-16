@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toku_app/home_page.dart';
+import 'package:toku_app/views/home_page.dart';
 
 void main() {
   runApp(const MyApp());
