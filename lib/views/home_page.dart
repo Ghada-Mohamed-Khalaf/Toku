@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/views/number_page.dart';
 import 'package:toku_app/widgets/category.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,7 +15,12 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Category(text: ' Numbers',color: Colors.orangeAccent,),
+          Category(text: ' Numbers',color: Colors.orangeAccent,onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context){
+            return NumberPage();
+          }
+          ));
+
+          },),
 
           Category(text: ' FamilyMembers',color: Colors.greenAccent,),
           Category(text: ' Colors',color: Colors.purple,),
