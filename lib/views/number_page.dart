@@ -1,60 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/models/number.dart';
+import 'package:toku_app/widgets/item.dart';
 
 class NumberPage extends StatelessWidget {
   NumberPage({super.key});
- final Number one=Number(
-    image: "asstes/images/numbers/number_one.png",
-    jpName: "ichi",
-    enName: "one",
-  );
+
+  final List<Number> numbers = const [
+    Number(
+        image: "asstes/images/numbers/number_one.png",
+        enName: "one",
+        jpName: "ichi"),
+    Number(
+        image: "asstes/images/numbers/number_two.png",
+        enName: "two",
+        jpName: "Ni"),
+
+    Number(
+        image: "asstes/images/numbers/number_three.png",
+        enName: "three",
+        jpName: "san"),
+    Number(
+        image: "asstes/images/numbers/number_four.png",
+        enName: "four",
+        jpName: "yon"),
+    Number(
+        image: "asstes/images/numbers/number_five.png",
+        enName: "five",
+        jpName: "go"),
+    Number(
+        image: "asstes/images/numbers/number_six.png",
+        enName: "six",
+        jpName: "roku"),
+    Number(
+        image: "asstes/images/numbers/number_seven.png",
+        enName: "seven",
+        jpName: "nana"),
+    Number(
+        image: "asstes/images/numbers/number_eight.png",
+        enName: "eight",
+        jpName: "hachi"),
+    Number(
+        image: "asstes/images/numbers/number_eight.png",
+        enName: "nine",
+        jpName: "kyu"),
+    Number(
+        image: "asstes/images/numbers/number_eight.png",
+        enName: "ten",
+        jpName: "ju"),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Numbers",style: TextStyle(color: Colors.white),),
+        title: Text(
+          "Numbers",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.brown,
       ),
-      body: Container(
-        height: 90,
-        color: Colors.orangeAccent,
-        child: Row(
-          children: [
-            Container(
-              color: Color(0xffE7CECEFF),
-
-
-                child: Image.asset(one.image)),
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(one.jpName,style: TextStyle(color: Colors.white,fontSize: 18,),),
-                  Text(one.enName,style: TextStyle(color: Colors.white,fontSize: 18),),
-
-                ],
-              ),
-            ),
-            Spacer(flex: 1,),
-
-
-            Padding(
-              padding: const EdgeInsets.only(right:  16),
-              child: Icon(Icons.play_arrow,color: Colors.white,size: 33,),
-            ),
-          ],
-
-        ),
-
+      body: ListView(
+        children: [
+          Item(number:numbers[0]),
+          Item(number:numbers[1]),
+          Item(number:numbers[2]),
+          Item(number: numbers[3]),
+          Item(number:numbers[4]),
+          Item(number: numbers[5]),
+          Item(number:numbers[6]),
+          Item(number:numbers[7]),
+          Item(number:numbers[8]),
+          Item(number: numbers[9]),
+        ],
       ),
-
     );
   }
 }
-class Number{
- final String image;
-final  String jpName;
- final String enName;
-const  Number({ required this.image,required this.enName,required this.jpName});
-}
+// List<Item>getList(List<Number>number){
+//
+// }
